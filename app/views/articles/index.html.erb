@@ -1,0 +1,75 @@
+<%# ヘッダー部分%>
+<header class='top-page-header'>
+  <div class='lists-left'>
+    <form class='search-form' action='#'> 
+      <input class='input-box' placeholder='キーワードを入力'>
+      <button class='search-button'>検索</button>
+    </form>
+  </div>
+  <div class='nav'>
+    <ul class='lists-right'>
+      <li class='log-in'>ログイン</li>
+      <li class='sign-up'>新規登録</li>
+    </ul>
+  </div>
+</header>
+<%# ヘッダー部分%>
+  <%# サービス名・説明部分%>
+  <div class='main'>
+    <div class='main-contents'>
+      <div class='title-contents'>
+        <h2 class='service-title'>
+          おそうじ事典
+        </h2>
+        <p class='service-explain'>
+          毎日の生活に欠かせない掃除。
+        <br>「ここはどう掃除すれば良いんだろう？」
+        <br>とお困りのあなたに、解決方法をご案内致します。
+        </p>
+      </div>
+      <div class='select-category-contents'>
+        <h2 class='title'>
+          カテゴリー
+        </h2>
+        <ul class='category-lists'>
+          <li class='list'>
+            <%= image_tag "フォークとスプーンのお食事アイコン素材.png", class:"list-pict" %>
+            <h3 class='category-list-text'>
+            キッチン
+            </h3>
+            <p>シンクを綺麗にしたい</p>
+            <p>コンロを綺麗にしたい</p>
+            <p>排水溝を綺麗にしたい</p>
+          </li>
+          <li class='list'>
+            <%= image_tag "お風呂のアイコン1.png", class:"list-pict" %>
+            <h3 class='category-list-text'>
+            浴室
+            </h3>
+          </li>
+          <li class='list'>
+            <%= image_tag "便器アイコン2.png", class:"list-pict" %>
+            <h3 class='category-list-text'>
+            お手洗い
+            </h3>
+          </li>
+        </ul>
+      </div>
+      <div class='how-to'>
+        <h2 class='title'>
+        サイトの特徴
+        </h2>
+        <ul class='how-to-lists'>
+          <li class='list'>
+            <%= image_tag "双葉の葉っぱアイコン.png", class:"check-pict" %>
+            検索機能で掃除の悩みを素早く検索できる
+          </li>
+          <li class='list'>
+            <%= image_tag "双葉の葉っぱアイコン.png", class:"check-pict" %>
+            サインインすると、ご自身の掃除に関する記事を書いてシェアしたり、
+            <br>記事について質問やコメントができる
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
