@@ -1,5 +1,12 @@
 <%# ヘッダー部分%>
 <header class='top-page-header'>
+  <div class='lists-left'>
+    <form class='search-form' action='#'> 
+      <input class='input-box' placeholder='キーワードを入力'>
+      <button class='search-button'>検索</button>
+    </form>
+  </div>
+  <div class='nav'>
     <ul class='lists-right'>
       <li class='log-in'>ログイン</li>
       <li class='sign-up'>新規登録</li>
@@ -17,7 +24,7 @@
         <p class='service-explain'>
           毎日の生活に欠かせない掃除。
         <br>「ここはどう掃除すれば良いんだろう？」
-        <br>とお困りのあなたに、このサイトは解決方法をご案内致します。
+        <br>とお困りのあなたに、解決方法をご案内致します。
         </p>
       </div>
       <div class='select-category-contents'>
@@ -30,6 +37,9 @@
             <h3 class='category-list-text'>
             キッチン
             </h3>
+            <p>シンクを綺麗にしたい</p>
+            <p>コンロを綺麗にしたい</p>
+            <p>排水溝を綺麗にしたい</p>
           </li>
           <li class='list'>
             <%= image_tag "お風呂のアイコン1.png", class:"list-pict" %>
@@ -63,8 +73,3 @@
       </div>
     </div>
   </div>
-  <%# フッター部分%>
-  <div class='footer'>
-    <p class='site-name'>CleanEncy</p>
-  </div>
-<%# フッター部分%>
