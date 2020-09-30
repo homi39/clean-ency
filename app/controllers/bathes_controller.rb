@@ -1,0 +1,2 @@
+class BathesController < ApplicationController
+end
