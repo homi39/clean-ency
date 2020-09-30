@@ -22,24 +22,30 @@ ActiveRecord::Schema.define(version: 2020_09_30_031835) do
   end
 
   create_table "baths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "article_id"
+    t.string "title", null: false
+    t.text "text", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_baths_on_article_id"
+    t.index ["user_id"], name: "index_baths_on_user_id"
   end
 
   create_table "kitchens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "article_id"
+    t.string "title", null: false
+    t.text "text", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_kitchens_on_article_id"
+    t.index ["user_id"], name: "index_kitchens_on_user_id"
   end
 
   create_table "toilets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "article_id"
+    t.string "title", null: false
+    t.text "text", null: false
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["article_id"], name: "index_toilets_on_article_id"
+    t.index ["user_id"], name: "index_toilets_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -61,7 +67,7 @@ ActiveRecord::Schema.define(version: 2020_09_30_031835) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "baths", "articles"
-  add_foreign_key "kitchens", "articles"
-  add_foreign_key "toilets", "articles"
+  add_foreign_key "baths", "users"
+  add_foreign_key "kitchens", "users"
+  add_foreign_key "toilets", "users"
 end
