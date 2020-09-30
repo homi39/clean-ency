@@ -1,5 +1,8 @@
 class Article < ApplicationRecord
   belongs_to :user
+  belongs_to :kitchen
+  belongs_to :bath
+  belongs_to :toilet
   has_many :comments
 
   extend ActiveHash::Associations::ActiveRecordExtensions
