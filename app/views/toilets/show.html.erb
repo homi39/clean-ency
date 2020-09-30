@@ -18,22 +18,15 @@
 <div class='main'>
   <div class='main-contents'>
     <div class='article-box'>
-      <% @toilets.each do |toilet| %>
-      <%= link_to toilet_path(toilet.id), class: "link",method: :get do %>
       <div class='article-title'>
-        <%= toilet.title %>
+        <%= @toilet.title %>
       </div>
       <div class='article-text'>
-        <%= toilet.text %>
+        <%= @toilet.text %>
       </div>
-      <% end %>
-      <% end %>
     </div>
-  </div>
-  <div class='input-btn'>
-    <span class='input-btn-text'>投稿する</span>
-      <a href="">
-      <%= image_tag 'Orion_edit.png' , size: '60x60' ,class: "input-btn-icon" %>
-    </a>
+    <div class='comments'>
+      <div class='comment-title'>質問・コメント</div>
+    </div>
   </div>
 </div>

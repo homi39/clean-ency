@@ -18,22 +18,7 @@
 <div class='main'>
   <div class='main-contents'>
     <div class='article-box'>
-      <% @toilets.each do |toilet| %>
-      <%= link_to toilet_path(toilet.id), class: "link",method: :get do %>
-      <div class='article-title'>
-        <%= toilet.title %>
-      </div>
-      <div class='article-text'>
-        <%= toilet.text %>
-      </div>
-      <% end %>
-      <% end %>
+      <h3>編集する</h3>
     </div>
-  </div>
-  <div class='input-btn'>
-    <span class='input-btn-text'>投稿する</span>
-      <a href="">
-      <%= image_tag 'Orion_edit.png' , size: '60x60' ,class: "input-btn-icon" %>
-    </a>
   </div>
 </div>
