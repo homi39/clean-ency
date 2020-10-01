@@ -24,4 +24,7 @@ class User < ApplicationRecord
     validates :gender_id
   end
 
+  extend ActiveHash::Associations::ActiveRecoadExtensions
+  belongs_to_active_hash :occupation
+  belongs_to_active_hash :gender
 end
