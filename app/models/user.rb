@@ -14,7 +14,7 @@ class User < ApplicationRecord
     validates :name_kana, format: { with: /\A[ァ-ヶー－]+\z/}
     validates :occupation_id
     validates :gender_id
-    validates :family_member, format: { with: \d }
+    validates :family_member
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i}
     validates :birth
   end
@@ -23,9 +23,5 @@ class User < ApplicationRecord
     validates :occupation_id
     validates :gender_id
   end
-
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :occupation_id
-  belongs_to_active_hash :gender_id
 
 end
