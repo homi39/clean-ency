@@ -170,3 +170,40 @@
   color: black;
   text-decoration: none;
 }
+
+//devise
+.form-info-header {
+  font-weight: bold;
+  text-align: center;
+}
+.indispensable {
+  margin-left: 10px;
+}
+.form-group {
+  text-align: center;
+}
+
+.input-default {
+  width: 350px;
+}
+.input-name {
+  height: 25px;
+}
+.input-number {
+  width: 80px;
+  height: 25px;
+}
+.input-birth-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.register-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login-btn {
+  text-align: center;
+  margin-top: 20px;
+}
