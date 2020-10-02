@@ -1,23 +1,13 @@
-<%# ヘッダー部分%>
-<header class='top-page-header'>
-  <div class='lists-left'>
-    <form class='search-form' action='#'> 
-      <input class='input-box' placeholder='キーワードを入力'>
-      <button class='search-button'>検索</button>
-    </form>
-  </div>
-  <div class='nav'>
-    <ul class='lists-right'>
-      <li class='log-in'>ログイン</li>
-      <li class='sign-up'>新規登録</li>
-    </ul>
-  </div>
-</header>
-<%# ヘッダー部分%>
 <div class='main'>
   <div class='main-contents'>
-    <div class='article-box'>
-      <h3>投稿する</h3>
+    <div class="contents">
+      <%= form_with(url: new_bathe_path, local: true) do |f| %>
+      <%= render 'shared/error_messages', model: @bath %>
+        <%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 40 %>
+        <%= f.text_area :text, class:'content-form', placeholder: "内容", size: "70×40" %>
+        <%= f.submit "投稿する", class:"send-btn" %>
+        <%=link_to 'もどる', class:"back-btn" %>
+      <% end %>
     </div>
   </div>
 </div>

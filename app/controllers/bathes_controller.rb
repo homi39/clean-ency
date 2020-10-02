@@ -9,6 +9,10 @@ class BathesController < ApplicationController
     @bath = Bath.find(params[:id])
   end
 
+  def new
+    @bath = Bath.new
+  end
+
   private
 
   def move_to_index

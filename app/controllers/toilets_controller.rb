@@ -9,6 +9,10 @@ class ToiletsController < ApplicationController
     @toilet = Toilet.find(params[:id])
   end
 
+  def new
+    @toilet = Toilet.new
+  end
+
   private
 
   def move_to_index

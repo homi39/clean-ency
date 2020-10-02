@@ -9,6 +9,10 @@ class KitchensController < ApplicationController
     @kitchen = Kitchen.find(params[:id])
   end
 
+  def new
+    @kitchen = Kitchen.new
+  end
+
   private
 
   def move_to_index
