@@ -1,7 +1,7 @@
 <div class='main'>
   <div class='main-contents'>
     <div class="contents">
-      <%= form_with(url: new_bathe_path, local: true) do |f| %>
+      <%= form_with(url: bathes_path, method: :post, local: true) do |f| %>
       <%= render 'shared/error_messages', model: @bath %>
         <div><%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 71 %></div>
         <div><%= f.text_area :text, class:'content-form', placeholder: "内容", size: "70×40" %></div>

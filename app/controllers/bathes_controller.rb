@@ -13,7 +13,20 @@ class BathesController < ApplicationController
     @bath = Bath.new
   end
 
+  def create
+    @bath= Bath.new(bath_params)
+    if @bath.save
+      redirect_to bathes_path
+    else
+      render :new
+    end
+  end
+
   private
+
+  def bath_params
+    params.permit(:title, :text).merge(user_id: current_user.id)
+  end
 
   def move_to_index
     unless user_signed_in?

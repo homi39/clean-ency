@@ -6,6 +6,15 @@
   display: flex;
 }
 
+.mini-title a{
+  font-size: 21px;
+  margin-right: 20px;
+  padding: 1vh 0;
+  text-decoration: none;
+  border-bottom: none;
+  color: black;
+}
+
 .search-form {
   width: 40vw;
   height: 5vh;
