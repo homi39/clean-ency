@@ -3,10 +3,10 @@
     <div class="contents">
       <%= form_with(url: new_bathe_path, local: true) do |f| %>
       <%= render 'shared/error_messages', model: @bath %>
-        <%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 40 %>
-        <%= f.text_area :text, class:'content-form', placeholder: "内容", size: "70×40" %>
-        <%= f.submit "投稿する", class:"send-btn" %>
-        <%=link_to 'もどる', class:"back-btn" %>
+        <div><%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 71 %></div>
+        <div><%= f.text_area :text, class:'content-form', placeholder: "内容", size: "70×40" %></div>
+        <div><%= f.submit "投稿する", class:"send-btn" %></div>
+        <div><%=link_to 'もどる', bathes_path, class:"back-btn" %></div>
       <% end %>
     </div>
   </div>
