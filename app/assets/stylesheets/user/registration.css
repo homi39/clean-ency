@@ -1,0 +1,48 @@
+.form-info-header {
+  font-weight: bold;
+  text-align: center;
+}
+.indispensable {
+  margin-left: 10px;
+}
+.form-group {
+  text-align: center;
+}
+
+.input-default {
+  width: 350px;
+}
+.input-name {
+  height: 25px;
+}
+.select {
+  height: 30px;
+}
+
+.input-number {
+  width: 80px;
+  height: 25px;
+}
+.input-birth-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.register-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+.register-blue-btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: skyblue;
+  color: #FFF;
+  cursor: pointer;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.register-blue-btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;
+}

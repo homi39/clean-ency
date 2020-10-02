@@ -1,0 +1,18 @@
+.login-btn {
+  text-align: center;
+  margin-top: 20px;
+}
+.login-blue-btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background-color: skyblue;
+  color: #FFF;
+  cursor: pointer;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.login-blue-btn:active {
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);
+  border-bottom: none;
+}
