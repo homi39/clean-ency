@@ -8,7 +8,7 @@ class Kitchen < ApplicationRecord
   end
   
   def self.search(search)
-    if search != ""
+    if search != ''
       Kitchen.where('text LIKE(?)', "%#{search}%")
     else
       Kitchen.all

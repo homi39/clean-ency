@@ -8,7 +8,7 @@ class Bath < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Bath.where('text LIKE(?)', "%#{search}%")
     else
       Bath.all

@@ -2,6 +2,10 @@
       <div class='mini-title'>
         <%= link_to 'おそうじ事典', root_path %></div>
       <div class='lists-left'>
+        <%= form_with(url: search_toilets_path, local: true, method: :get, class: "search-form") do |f| %>
+          <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "input-box" %>
+          <%= f.submit "検索", class: "search-btn" %>
+        <% end %>
       </div>
       <div class='nav'>
         <ul class='lists-right'>
@@ -18,14 +22,16 @@
 </header>
 <div class='main'>
   <div class='main-contents'>
-    <div class="contents">
-      <h3>投稿画面</h3>
-      <%= form_with(url: toilets_path, method: :post, local: true) do |f| %>
-      <%= render 'shared/error_messages', model: @toilet %>
-        <div><%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 71 %></div>
-        <div><%= f.text_area :text, class:'content-form', placeholder: "内容", size: "70×40" %></div>
-        <div><%= f.submit "投稿する", class:"send-btn" %></div>
-        <div><%=link_to 'もどる', toilets_path, class:"back-btn" %></div>
+    <div class='article-box'>
+      <% @toilets.each do |toilet| %>
+        <%= link_to toilet_path(toilet.id), class: "link",method: :get do %>
+          <div class='article-title'>
+            <%= toilet.title %>
+          </div>
+          <div class='article-text'>
+            <%= toilet.text %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>

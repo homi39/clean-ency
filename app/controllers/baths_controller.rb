@@ -2,7 +2,7 @@ class BathsController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
   
   def index
-    @baths = Bath.includes(:user).order("created_at DESC")
+    @baths = Bath.includes(:user).order('created_at DESC')
   end
 
   def show

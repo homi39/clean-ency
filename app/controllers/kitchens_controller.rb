@@ -2,7 +2,7 @@ class KitchensController < ApplicationController
   before_action :move_to_index, except: [:index, :show, :search]
 
   def index
-    @kitchens = Kitchen.includes(:user).order("created_at DESC")
+    @kitchens = Kitchen.includes(:user).order('created_at DESC')
   end
 
   def show
@@ -30,7 +30,7 @@ class KitchensController < ApplicationController
 
   def update
     kitchen = Kitchen.find(params[:id])
-    if kitchen.update(kitchen_params)
+    if kitchen.update(kitchenup_params)
       redirect_to kitchens_path
     else
       render :edit
@@ -44,6 +44,10 @@ class KitchensController < ApplicationController
   private
 
   def kitchen_params
+    params.permit(:title, :text).merge(user_id: current_user.id)
+  end
+
+  def kitchenup_params
     params.require(:kitchen).permit(:title, :text).merge(user_id: current_user.id)
   end
   

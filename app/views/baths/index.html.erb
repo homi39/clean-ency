@@ -1,3 +1,25 @@
+<header class='top-page-header'>
+      <div class='mini-title'>
+        <%= link_to 'おそうじ事典', root_path %></div>
+      <div class='lists-left'>
+        <%= form_with(url: search_baths_path, local: true, method: :get, class: "search-form") do |f| %>
+          <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "input-box" %>
+          <%= f.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
+      <div class='nav'>
+        <ul class='lists-right'>
+          <% if user_signed_in? %>
+            <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+            <span>さん</span>
+            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li>
+          <% else %>
+            <li><%= link_to 'ログイン', new_user_session_path, class: "log-in" %></li>
+            <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+          <% end %>
+        </ul>
+      </div>
+</header>
 <div class='main'>
   <div class='main-contents'>
     <div class='article-box'>

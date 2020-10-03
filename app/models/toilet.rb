@@ -8,7 +8,7 @@ class Toilet < ApplicationRecord
   end
 
   def self.search(search)
-    if search != ""
+    if search != ''
       Toilet.where('text LIKE(?)', "%#{search}%")
     else
       Toilet.all
