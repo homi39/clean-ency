@@ -24,6 +24,10 @@ class ToiletsController < ApplicationController
     end
   end
 
+  def edit
+    @toilet = Toilet.find(params[:id])
+  end
+
   private
 
   def toilet_params

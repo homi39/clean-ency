@@ -24,6 +24,10 @@ class KitchensController < ApplicationController
     end
   end
 
+  def edit
+    @kitchen = Kitchen.find(params[:id])
+  end
+
   private
 
   def kitchen_params

@@ -24,6 +24,10 @@ class BathsController < ApplicationController
     end
   end
 
+  def edit
+    @bath = Bath.find(params[:id])
+  end
+  
   private
 
   def bath_params
