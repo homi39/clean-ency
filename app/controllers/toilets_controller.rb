@@ -30,14 +30,18 @@ class ToiletsController < ApplicationController
 
   def update
     toilet = Toilet.find(params[:id])
-    toilet.update(toilet_params)
+    if toilet.update(toilet_params)
+      redirect_to toilets_path
+    else
+      render :edit
+    end
   end
 
 
   private
 
   def toilet_params
-    params.permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:toilet).permit(:title, :text).merge(user_id: current_user.id)
   end
   
   def move_to_index

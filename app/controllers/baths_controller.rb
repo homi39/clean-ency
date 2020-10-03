@@ -16,9 +16,9 @@ class BathsController < ApplicationController
   end
 
   def create
-    @bath= Bath.new(bath_params)
+    @bath = Bath.new(bath_params)
     if @bath.save
-      redirect_to bathes_path
+      redirect_to baths_path
     else
       render :new
     end
@@ -30,13 +30,17 @@ class BathsController < ApplicationController
 
   def update
     bath = Bath.find(params[:id])
-    bath.update(bath_params)
+    if bath.update(bath_params)
+      redirect_to bath_path
+    else
+      render :edit
+    end
   end
 
   private
 
   def bath_params
-    params.permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:bath).permit(:title, :text).merge(user_id: current_user.id)
   end
 
   def move_to_index

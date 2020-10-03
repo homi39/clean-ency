@@ -30,14 +30,18 @@ class KitchensController < ApplicationController
 
   def update
     kitchen = Kitchen.find(params[:id])
-    kitchen.update(kitchen_params)
+    if kitchen.update(kitchen_params)
+      redirect_to kitchens_path
+    else
+      render :edit
+    end
   end
 
 
   private
 
   def kitchen_params
-    params.permit(:title, :text).merge(user_id: current_user.id)
+    params.require(:kitchen).permit(:title, :text).merge(user_id: current_user.id)
   end
   
   def move_to_index
