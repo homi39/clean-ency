@@ -64,11 +64,16 @@
   padding-top: 100px;
 }
 
-/* new.html.erb　*/
+/* new.html.erb, edit.html.erb　*/
 .contents {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 20px;
+  text-align: center;
+}
+h3 {
+  font-size: 20px;
 }
 
 /* show.html.erb */
@@ -79,6 +84,10 @@
   align-items: center;
   width: 100%;
 }
+.edit-btn {
+  text-align: right;
+}
+
 .submit-btn {
   text-align: center;
 }

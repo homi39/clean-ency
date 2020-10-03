@@ -1,6 +1,7 @@
 <div class='main'>
   <div class='main-contents'>
     <div class="contents">
+      <h3>投稿画面</h3>
       <%= form_with(url: kitchens_path, method: :post, local: true) do |f| %>
       <%= render 'shared/error_messages', model: @kitchen %>
         <div><%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 71 %></div>
