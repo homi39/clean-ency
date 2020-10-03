@@ -1,8 +1,8 @@
 class BathsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   
   def index
-    @baths = Bath.includes(:user).order("created_at DESC")
+    @baths = Bath.includes(:user).order('created_at DESC')
   end
 
   def show
@@ -35,6 +35,10 @@ class BathsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def search
+    @baths = Bath.search(params[:keyword])
   end
 
   private
