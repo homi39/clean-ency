@@ -1,5 +1,5 @@
 class KitchensController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
 
   def index
     @kitchens = Kitchen.includes(:user).order("created_at DESC")
@@ -37,6 +37,9 @@ class KitchensController < ApplicationController
     end
   end
 
+  def search
+    @kitchens = Kitchen.search(params[:keyword])
+  end
 
   private
 
