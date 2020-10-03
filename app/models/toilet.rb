@@ -6,4 +6,12 @@ class Toilet < ApplicationRecord
     validates :title
     validates :text
   end
+
+  def self.search(search)
+    if search != ""
+      Toilet.where('text LIKE(?)', "%#{search}%")
+    else
+      Toilet.all
+    end
+  end
 end

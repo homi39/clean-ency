@@ -6,4 +6,12 @@ class Bath < ApplicationRecord
     validates :title
     validates :text
   end
+
+  def self.search(search)
+    if search != ""
+      Bath.where('text LIKE(?)', "%#{search}%")
+    else
+      Bath.all
+    end
+  end
 end
