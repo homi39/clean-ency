@@ -28,6 +28,12 @@ class ToiletsController < ApplicationController
     @toilet = Toilet.find(params[:id])
   end
 
+  def update
+    toilet = Toilet.find(params[:id])
+    toilet.update(toilet_params)
+  end
+
+
   private
 
   def toilet_params

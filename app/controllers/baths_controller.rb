@@ -27,7 +27,12 @@ class BathsController < ApplicationController
   def edit
     @bath = Bath.find(params[:id])
   end
-  
+
+  def update
+    bath = Bath.find(params[:id])
+    bath.update(bath_params)
+  end
+
   private
 
   def bath_params
