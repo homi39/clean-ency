@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_30_031835) do
+ActiveRecord::Schema.define(version: 2020_10_02_114600) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -19,6 +19,16 @@ ActiveRecord::Schema.define(version: 2020_09_30_031835) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.integer "genre_id"
+  end
+
+  create_table "ba_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "bath_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["bath_id"], name: "index_ba_comments_on_bath_id"
+    t.index ["user_id"], name: "index_ba_comments_on_user_id"
   end
 
   create_table "baths", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -30,6 +40,16 @@ ActiveRecord::Schema.define(version: 2020_09_30_031835) do
     t.index ["user_id"], name: "index_baths_on_user_id"
   end
 
+  create_table "ki_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "kitchen_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["kitchen_id"], name: "index_ki_comments_on_kitchen_id"
+    t.index ["user_id"], name: "index_ki_comments_on_user_id"
+  end
+
   create_table "kitchens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
     t.text "text", null: false
@@ -37,6 +57,16 @@ ActiveRecord::Schema.define(version: 2020_09_30_031835) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_kitchens_on_user_id"
+  end
+
+  create_table "to_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.text "text", null: false
+    t.bigint "user_id", null: false
+    t.bigint "toilet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["toilet_id"], name: "index_to_comments_on_toilet_id"
+    t.index ["user_id"], name: "index_to_comments_on_user_id"
   end
 
   create_table "toilets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,11 +93,15 @@ ActiveRecord::Schema.define(version: 2020_09_30_031835) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "ba_comments", "baths"
+  add_foreign_key "ba_comments", "users"
   add_foreign_key "baths", "users"
+  add_foreign_key "ki_comments", "kitchens"
+  add_foreign_key "ki_comments", "users"
   add_foreign_key "kitchens", "users"
+  add_foreign_key "to_comments", "toilets"
+  add_foreign_key "to_comments", "users"
   add_foreign_key "toilets", "users"
 end

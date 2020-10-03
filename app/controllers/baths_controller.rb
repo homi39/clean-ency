@@ -1,12 +1,14 @@
-class BathesController < ApplicationController
+class BathsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   
   def index
-    @bathes = Bath.includes(:user).order("created_at DESC")
+    @baths = Bath.includes(:user).order("created_at DESC")
   end
 
   def show
     @bath = Bath.find(params[:id])
+    @bacomment = BaComment.new
+    @bacomments = @bath.ba_comments.includes(:user)
   end
 
   def new

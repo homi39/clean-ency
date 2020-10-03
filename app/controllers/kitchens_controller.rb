@@ -7,6 +7,8 @@ class KitchensController < ApplicationController
 
   def show
     @kitchen = Kitchen.find(params[:id])
+    @kicomment = KiComment.new
+    @kicomments = @kitchen.ki_comments.includes(:user)
   end
 
   def new

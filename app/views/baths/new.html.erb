@@ -1,12 +1,12 @@
 <div class='main'>
   <div class='main-contents'>
     <div class="contents">
-      <%= form_with(url: bathes_path, method: :post, local: true) do |f| %>
+      <%= form_with(url: baths_path, method: :post, local: true) do |f| %>
       <%= render 'shared/error_messages', model: @bath %>
         <div><%= f.text_field :title, class:'title-form', placeholder: "タイトル", size: 71 %></div>
         <div><%= f.text_area :text, class:'content-form', placeholder: "内容", size: "70×40" %></div>
         <div><%= f.submit "投稿する", class:"send-btn" %></div>
-        <div><%=link_to 'もどる', bathes_path, class:"back-btn" %></div>
+        <div><%=link_to 'もどる', baths_path, class:"back-btn" %></div>
       <% end %>
     </div>
   </div>

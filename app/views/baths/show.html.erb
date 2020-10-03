@@ -2,14 +2,14 @@
   <div class='main-contents'>
     <div class='article-box'>
       <div class='article-title'>
-        <%= @kitchen.title %>
+        <%= @bath.title %>
       </div>
       <div class='article-text'>
-        <%= @kitchen.text %>
+        <%= @bath.text %>
       </div>
       <div class='comment-form'>
         <% if user_signed_in? %>
-          <%= form_with(model: [@kitchen, @kicomment], local: true) do |f| %>
+          <%= form_with(model: [@bath, @bacomment], local: true) do |f| %>
             <div><%= f.text_area :text, placeholder: "記事についての質問・コメントをこちらに記入してください", size: "70×40" %></div>
             <div class='submit-btn'><%= f.submit "送信" %></div>
           <% end %>
@@ -20,8 +20,8 @@
       <div class='comments'>
         <div class='comment-title'>質問・コメント一覧</div>
         <div class='comment-text'>
-        <% if @kicomments %>
-          <% @kicomments.each do |comment| %>
+        <% if @bacomments %>
+          <% @bacomments.each do |comment| %>
             <p>
               <%= comment.user.nickname %>さん:
               <%= comment.text %>

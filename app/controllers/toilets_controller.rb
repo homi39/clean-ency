@@ -7,6 +7,8 @@ class ToiletsController < ApplicationController
 
   def show
     @toilet = Toilet.find(params[:id])
+    @tocomment = ToComment.new
+    @tocomments = @toilet.to_comments.includes(:user)
   end
 
   def new

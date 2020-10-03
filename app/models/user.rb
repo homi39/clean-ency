@@ -2,7 +2,9 @@ class User < ApplicationRecord
    has_many :kitchens
    has_many :bathes
    has_many :toilets
-   has_many :comments
+   has_many :ki_comments
+   has_many :ba_comments
+   has_many :to_comments
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

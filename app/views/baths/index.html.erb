@@ -1,8 +1,8 @@
 <div class='main'>
   <div class='main-contents'>
     <div class='article-box'>
-      <% @bathes.each do |bath| %>
-      <%= link_to bathe_path(bath.id), class: "link", method: :get do %>
+      <% @baths.each do |bath| %>
+      <%= link_to bath_path(bath.id), class: "link",method: :get do %>
       <div class='article-title'>
         <%= bath.title %>
       </div>
@@ -15,7 +15,7 @@
   </div>
   <div class='input-btn'>
     <span class='input-btn-text'>投稿する</span>
-      <a href="/bathes/new">
+      <a href="/baths/new">
       <%= image_tag 'Orion_edit.png' , size: '60x60' ,class: "input-btn-icon" %>
     </a>
   </div>
