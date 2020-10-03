@@ -1,0 +1,22 @@
+<div class='main'>
+  <div class='main-contents'>
+    <div class='article-box'>
+      <% @baths.each do |bath| %>
+      <%= link_to bath_path(bath.id), class: "link",method: :get do %>
+      <div class='article-title'>
+        <%= bath.title %>
+      </div>
+      <div class='article-text'>
+        <%= bath.text %>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+  </div>
+  <div class='input-btn'>
+    <span class='input-btn-text'>投稿する</span>
+      <a href="/baths/new">
+      <%= image_tag 'Orion_edit.png' , size: '60x60' ,class: "input-btn-icon" %>
+    </a>
+  </div>
+</div>

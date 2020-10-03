@@ -1,0 +1,96 @@
+.article-box {
+  width: 700px;
+  margin: 0 auto;
+  color: black;
+  text-decoration: none;
+}
+
+.article-title {
+  font-size: 21px;
+  text-align: center;
+  padding-top: 100px;
+  border-bottom: 1px solid green;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.input-btn {
+  width: 120px;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+.input-btn-text {
+  color: black;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+.input-btn-icon {
+  width: 60%;
+}
+
+.mini-title {
+  font-size: 21px;
+  margin-right: 20px;
+  padding: 1vh 0;
+}
+.article-box {
+  width: 700px;
+  margin: 0 auto;
+  color: black;
+  text-decoration: none;
+}
+
+.article-title {
+  font-size: 21px;
+  text-align: center;
+  padding-top: 100px;
+  border-bottom: 1px solid green;
+}
+
+.comments {
+  font-size: 20px;
+  text-align: center;
+  width: 700px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+/* new.html.erb　*/
+.contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* show.html.erb */
+.comment-form {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.submit-btn {
+  text-align: center;
+}
+
+.comment-title {
+  font-size: 21px;
+  text-align: center;
+  padding-top: 10px;
+  border-bottom: 1px solid green;
+}
+
+.comment-text {
+  font-size: 18px;
+  text-align: left;
+}

@@ -1,0 +1,2 @@
+module KiCommentsHelper
+end

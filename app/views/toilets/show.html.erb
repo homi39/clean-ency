@@ -1,20 +1,3 @@
-<%# ヘッダー部分%>
-<header class='top-page-header'>
-  <div class='mini-title'>おそうじ事典</div>
-  <div class='lists-left'>
-    <form class='search-form' action='#'> 
-      <input class='input-box' placeholder='キーワードを入力'>
-      <button class='search-button'>検索</button>
-    </form>
-  </div>
-  <div class='nav'>
-    <ul class='lists-right'>
-      <li class='log-in'>ログイン</li>
-      <li class='sign-up'>新規登録</li>
-    </ul>
-  </div>
-</header>
-<%# ヘッダー部分%>
 <div class='main'>
   <div class='main-contents'>
     <div class='article-box'>
@@ -24,9 +7,29 @@
       <div class='article-text'>
         <%= @toilet.text %>
       </div>
-    </div>
-    <div class='comments'>
-      <div class='comment-title'>質問・コメント</div>
+      <div class='comment-form'>
+        <% if user_signed_in? %>
+          <%= form_with(model: [@toilet, @tocomment], local: true) do |f| %>
+            <div><%= f.text_area :text, placeholder: "記事についての質問・コメントをこちらに記入してください", size: "70×40" %></div>
+            <div class='submit-btn'><%= f.submit "送信" %></div>
+          <% end %>
+        <% else %>
+          <p>※質問・コメントはログインが必要です</p>
+        <% end %>
+      </div>
+      <div class='comments'>
+        <div class='comment-title'>質問・コメント一覧</div>
+        <div class='comment-text'>
+        <% if @tocomments %>
+          <% @tocomments.each do |comment| %>
+            <p>
+              <%= comment.user.nickname %>さん:
+              <%= comment.text %>
+            </p>
+         <% end %>
+        <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

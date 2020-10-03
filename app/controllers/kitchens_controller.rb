@@ -7,10 +7,29 @@ class KitchensController < ApplicationController
 
   def show
     @kitchen = Kitchen.find(params[:id])
+    @kicomment = KiComment.new
+    @kicomments = @kitchen.ki_comments.includes(:user)
+  end
+
+  def new
+    @kitchen = Kitchen.new
+  end
+
+  def create
+    @kitchen = Kitchen.new(kitchen_params)
+    if @kitchen.save
+      redirect_to kitchens_path
+    else
+      render :new
+    end
   end
 
   private
 
+  def kitchen_params
+    params.permit(:title, :text).merge(user_id: current_user.id)
+  end
+  
   def move_to_index
     unless user_signed_in?
       redirect_to root_path
