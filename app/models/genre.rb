@@ -5,4 +5,4 @@ class Genre < ActiveHash::Base
     { id: 3, name: '浴室' },
     { id: 4, name: 'お手洗い' },
   ]
-  end
+end
