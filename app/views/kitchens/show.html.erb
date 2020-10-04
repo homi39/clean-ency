@@ -26,7 +26,7 @@
         <%= @kitchen.text %>
       </div>
       <div class='edit-btn'>
-        <% if @kitchen.user.id == current_user.id %>
+        <% if user_signed_in? && @kitchen.user_id == current_user.id %>
           <%= link_to '編集する', edit_kitchen_path(@kitchen.id), class: "edit-btn", method: :get %>
         <% end %>
       </div>
