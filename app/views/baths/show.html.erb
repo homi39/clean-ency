@@ -26,7 +26,7 @@
         <%= @bath.text %>
       </div>
       <div class='edit-btn'>
-        <% if @bath.user.id == current_user.id %>
+        <% if user_signed_in? && @bath.user_id == current_user.id %>
           <%= link_to '編集する', edit_bath_path(@bath.id), class: "edit-btn", method: :get %>
         <% end %>
       </div>
