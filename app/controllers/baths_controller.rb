@@ -30,8 +30,8 @@ class BathsController < ApplicationController
 
   def update
     bath = Bath.find(params[:id])
-    if bath.update(bath_params)
-      redirect_to bath_path
+    if bath.update(bathup_params)
+      redirect_to baths_path
     else
       render :edit
     end
@@ -44,6 +44,10 @@ class BathsController < ApplicationController
   private
 
   def bath_params
+    params.permit(:title, :text).merge(user_id: current_user.id)
+  end
+
+  def bathup_params
     params.require(:bath).permit(:title, :text).merge(user_id: current_user.id)
   end
 
