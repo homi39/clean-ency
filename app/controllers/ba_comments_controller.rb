@@ -7,7 +7,7 @@ class BaCommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:ba_comment).permit(:text).merge(user_id: current_user.id, toilet_id: params[:toilet_id])
+    params.require(:ba_comment).permit(:text).merge(user_id: current_user.id, bath_id: params[:bath_id])
   end
 
 end

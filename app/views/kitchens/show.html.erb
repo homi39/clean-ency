@@ -30,6 +30,7 @@
           <%= link_to '編集する', edit_kitchen_path(@kitchen.id), class: "edit-btn", method: :get %>
         <% end %>
       </div>
+      <div class='person'>投稿者：<%= @kitchen.user.nickname %></div>
       <div class='comment-form'>
         <% if user_signed_in? %>
           <%= form_with(model: [@kitchen, @kicomment], local: true) do |f| %>

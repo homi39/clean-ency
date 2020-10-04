@@ -30,6 +30,7 @@
           <%= link_to '編集する', edit_toilet_path(@toilet.id), class: "edit-btn", method: :get %>
         <% end %>
       </div>
+      <div class='person'>投稿者：<%= @toilet.user.nickname %></div>
       <div class='comment-form'>
         <% if user_signed_in? %>
           <%= form_with(model: [@toilet, @tocomment], local: true) do |f| %>
