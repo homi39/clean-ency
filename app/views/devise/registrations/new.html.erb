@@ -9,8 +9,9 @@
 </header>
 <div class ='main'>
     <div class='main-contents'>
-      <h2 class='form-info-header'>新規登録<span class="indispensable">全て入力必須です</span></h2>
-      
+      <h2 class='form-info-header'>新規登録</h2>
+        <p class="indispensable">全て入力必須です</p>
+        <p class="indispensable">※ニックネームと生年月日は後から変更できませんので、ご注意ください※
     
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>

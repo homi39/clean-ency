@@ -1,3 +1,35 @@
+.mini-title a{
+  font-size: 20px;
+  
+  padding: 1vh 0;
+  text-decoration: none;
+  border-bottom: none;
+  color: black;
+  white-space: nowrap;
+}
+
+.search-form {
+  width: 38vw;
+  height: 5vh;
+  display: flex;
+  margin-bottom: 5px;
+}
+.search-form>.input-box {
+  width: 100%;
+  height: 5vh;
+  padding-left: 10px;
+}
+.search-button {
+  width: 5vw;
+  border: 0;
+  cursor: pointer;
+  background-color: skyblue;
+  padding: 8px;
+}
+.user-nickname {
+  color: black;
+}
+
 .article-box {
   width: 700px;
   margin: 0 auto;
@@ -35,6 +67,9 @@
 }
 .input-btn-icon {
   width: 60%;
+}
+.input-box {
+  font-size: 15px;
 }
 
 .mini-title {
@@ -106,4 +141,72 @@ h3 {
 .comment-text {
   font-size: 18px;
   text-align: left;
+}
+
+@media screen and (max-width: 959px) {
+  .mini-title a{
+    font-size: 17px;
+    margin-right: 12px;
+  }
+
+  .article-box {
+    width: 500px;
+  }
+
+  .article-title {
+    font-size: 17px;
+  }
+  .comments {
+    width: 500px;
+    padding-top: 50px;
+  }
+  .comment-title {
+    font-size: 14px;
+    padding-top: 7px;
+  }
+  
+  .comment-text {
+    font-size: 12px;
+  }
+  .input-box {
+    font-size: 13px;
+  }
+
+  .input-btn-text {
+    font-size: 15px;
+  }
+  
+}
+
+@media screen and (max-width: 559px) {
+  .mini-title a{
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .article-box {
+    width: 400px;
+  }
+  .article-title {
+    font-size: 14px;
+  }
+  .comments {
+    width: 300px;
+    padding-top: 30px;
+  }
+  .comment-title {
+    font-size: 11px;
+    padding-top: 5px;
+  }
+  
+  .comment-text {
+    font-size: 10px;
+  }
+  .input-btn-text {
+    font-size: 12px;
+  }
+  .input-box {
+    font-size: 11px;
+  }
+  
 }

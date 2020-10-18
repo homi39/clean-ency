@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }
   root to: "articles#index"
   resources :kitchens do
     resources :ki_comments, only: :create
@@ -19,4 +21,5 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  resources :users, only: :show
 end

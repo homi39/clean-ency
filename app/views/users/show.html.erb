@@ -1,0 +1,29 @@
+<header class='top-page-header'>
+      <div class='mini-title'>
+        <%= link_to 'おそうじ事典', root_path %>
+      </div>
+      <div class='lists-left'>
+      </div>
+      <div class='nav'>
+        <%= @nickname %>
+        <span>さん</span>
+      </div>
+</header>
+<%# サービス名・説明部分%>
+  <div class='main'>
+    <div class='main-contents'>
+      <div class='user-content'>
+        <div class='user-info'>ユーザー情報</div>
+        <div>お名前：<%= @name %></div>
+        <div>フリガナ：<%= @namekana %></div>
+        <div>メールアドレス： <%= @email %></div>
+        <div>生年月日：<%= @birth %></div>
+        <div>性別：<%= @gender %></div>
+        <div>ご職業：<%= @occupation %></div>
+        <div>同居人数（ご自身を含む）：<%= @family %>人</div>
+        <div><%= link_to '編集する', edit_user_registration_path %></div>
+        <div><%= link_to 'トップページへもどる', root_path %></div>
+      </div>
+    </div>
+  </div>
+<%# サービス名・説明部分%>

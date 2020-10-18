@@ -1,0 +1,12 @@
+.user-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-info {
+  font-size: 20px;
+  border-bottom: 1px solid black;
+  margin-bottom: 20px;
+}
